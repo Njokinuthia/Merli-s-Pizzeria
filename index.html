@@ -11,7 +11,7 @@
 
 <body id="body">
   <!-- Header section -->
-  <section class="header border">
+  <section id="home" class="header border">
     <nav
       class="w-100  d-flex justify-content-around align-items-center shadow-xl fixed-top fw-bold bg-dark text-white ">
       <div class="d-flex align-items-end">
@@ -20,10 +20,10 @@
       </div>
 
       <div class="d-flex justify-content-evenly w-50  hover">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Menu</a>
-        <a href="#">Location</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#order">Order</a>
       </div>
 
       <div class="fw-bold">
@@ -41,24 +41,27 @@
   </section>
 
   <!-- Menu section -->
-  <section class="menu container-fluid border w-100">
+  <section id="menu" class="menu container-fluid border w-100">
     <h2 class="text-center display-2">OUR MENU</h2>
 
     <div class="text-center row w-100 mx-auto py-4">
       <div id="meatPizza" class="col position-relative">
         <h3 class="card-title">MEATY</h3>
         <img class="w-100" src="assets/meaty.jpeg" alt="meaty" height="250">
-        <div class="meatHidden position-absolute w-50">Meaty - Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</div>
+        <div class="meatHidden position-absolute w-50">Meaty - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Labore, minus</div>
       </div>
-      <div  id="cheesePizza" class="col position-relative">
+      <div id="cheesePizza" class="col position-relative">
         <h3>EXTRA CHEESE</h3>
         <img class="w-100" src="assets/cheese2.jpeg" alt="cheesey" height="250">
-        <div class="cheeseHidden position-absolute w-50">Cheesey - Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</div>
+        <div class="cheeseHidden position-absolute w-50">Cheesey - Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Labore, minus</div>
       </div>
-      <div  id="vegPizza"  class="col position-relative">
+      <div id="vegPizza" class="col position-relative">
         <h3>VEGETERIAN</h3>
         <img class="w-100" src="assets/veg2.jpg" alt="vegeterian" height="250">
-        <div class="vegHidden position-absolute w-50">Veggy - Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</div>
+        <div class="vegHidden position-absolute w-50">Veggy - Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Labore, minus</div>
       </div>
     </div>
 
@@ -67,15 +70,15 @@
 
   <!-- ordering section -->
   <!-- TODO:Style Section - choices divs -->
-  <section class="order">
-    <h3 class="text-center">ORDER NOW</h3>
+  <section id="order" class="order text-white">
     <div class="container">
+      <h3 class="text-center display-3">ORDER NOW</h3>
 
       <form class="submit">
-        <div class="border row ">
+        <div class="row w-50 ml-0">
 
-          <div class="radio col-md-4 border ">
-            <h3 class="text-center">Sizes</h3>
+          <div class="col-md-4">
+            <h3>Sizes</h3>
             <div class="card-body">
               <label for=""><input type="radio" name="size" value="large">Large</label><br>
               <label for=""><input type="radio" name="size" value="medium">Medium</label><br>
@@ -83,22 +86,26 @@
             </div>
           </div>
 
-          <div class="radio col-md-4 border">
-            <h3 class="text-center">Crusts</h3>
-            <label for=""><input type="radio" name="crust" value="crispy">Crispy</label><br>
-            <label for=""><input type="radio" name="crust" value="stuffed">Stuffed</label><br>
-            <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free</label><br>
+          <div class="col-md-4">
+            <h3>Crusts</h3>
+            <div class="card-body">
+              <label for=""><input type="radio" name="crust" value="crispy">Crispy</label><br>
+              <label for=""><input type="radio" name="crust" value="stuffed">Stuffed</label><br>
+              <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free</label><br>
+            </div>
           </div>
 
           <div class="radio col-md-4">
-            <h3 class="text-center">Toppings</h3>
-            <label for=""><input type="radio" name="topping" value="meaty">Meaty</label><br>
-            <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy</label><br>
-            <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian</label><br>
+            <h3>Toppings</h3>
+            <div class="card-body">
+              <label for=""><input type="radio" name="topping" value="meaty">Meaty</label><br>
+              <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy</label><br>
+              <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian</label><br>
+            </div>
           </div>
         </div>
 
-        <div>
+        <div class="col-md-6 w-50 ml-0">
           <h3>Quantity(pcs)</h3>
           <label for="quantity"><input type="number" id="quantity"></label><br>
 
