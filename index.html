@@ -33,36 +33,36 @@
 
     <div class="hero d-flex flex-column justify-content-around align-items-center text-center">
       <div class="h-50 d-flex flex-column justify-content-between align-items-center text-center ">
-        <h5 class="display-5 fw-bold">fast.fresh.delicious</h5>
+        <h5 class="display-4 fw-bold">fast.fresh.delicious</h5>
         <h1 class="display-1 fw-bold">Merli's Pizzeria</h1>
-        <button class="btn text-black fw-bold">shop now</button>
+        <h5 class="display-6 fw-bold">love at first<br>slice</h5>
       </div>
     </div>
   </section>
 
   <!-- Menu section -->
-  <section class=" border menu">
-    <h2 class="text-center">OUR MENU</h2>
-    <div class="container ">
-      <div class="container-fluid text-center border row py-4 my-1">
-        <div class="col">
-          <h3>MEATY</h3>
-          <img src="assets/meaty.jpeg" alt="pizza1">
-          <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</P>
-        </div>
-        <div class="col">
-          <h3>EXTRA CHEESE</h3>
-          <img src="assets/cheese2.jpeg" alt="pizza1">
-          <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</P>
-        </div>
-        <div class="col">
-          <h3>VEGETERIAN</h3>
-          <img src="assets/veg.jpeg" alt="pizza1" width="150">
-          <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</P>
-        </div>
-      </div>
+  <section class="menu container-fluid border w-100">
+    <h2 class="text-center display-2">OUR MENU</h2>
 
+    <div class="text-center row w-100 mx-auto py-4">
+      <div id="meatPizza" class="col position-relative">
+        <h3 class="card-title">MEATY</h3>
+        <img class="w-100" src="assets/meaty.jpeg" alt="meaty" height="250">
+        <div class="meatHidden position-absolute w-50">Meaty - Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</div>
+      </div>
+      <div  id="cheesePizza" class="col position-relative">
+        <h3>EXTRA CHEESE</h3>
+        <img class="w-100" src="assets/cheese2.jpeg" alt="cheesey" height="250">
+        <div class="cheeseHidden position-absolute w-50">Cheesey - Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</div>
+      </div>
+      <div  id="vegPizza"  class="col position-relative">
+        <h3>VEGETERIAN</h3>
+        <img class="w-100" src="assets/veg2.jpg" alt="vegeterian" height="250">
+        <div class="vegHidden position-absolute w-50">Veggy - Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</div>
+      </div>
     </div>
+
+
   </section>
 
   <!-- ordering section -->
@@ -72,7 +72,7 @@
     <div class="container">
 
       <form class="submit">
-        <div class="border row " >
+        <div class="border row ">
 
           <div class="radio col-md-4 border ">
             <h3 class="text-center">Sizes</h3>
@@ -99,7 +99,7 @@
         </div>
 
         <div>
-          <h3 >Quantity(pcs)</h3>
+          <h3>Quantity(pcs)</h3>
           <label for="quantity"><input type="number" id="quantity"></label><br>
 
           <h3>Mode of delivery</h3>

@@ -4,6 +4,21 @@
 
 
 // BUSINESS LOGIC CODE
+// menu hover
+ $(document).ready(function(){
+  $("#meatPizza").hover(function(){    
+    $(".meatHidden").toggle()
+  })
+  $("#cheesePizza").hover(function(){    
+    $(".cheeseHidden").toggle()
+  })
+  $("#vegPizza").hover(function(){    
+    $(".vegHidden").toggle()
+  })
+ })
+
+
+
 // Validation of form function
 let validate = function(size, crust, topping,quantity,delivery){
   if (!size || !crust || !topping || !quantity ||!delivery) return false;

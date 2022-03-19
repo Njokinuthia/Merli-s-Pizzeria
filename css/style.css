@@ -32,3 +32,18 @@ nav{
 /* .menu{
   height: 80%;
 } */
+
+.meatHidden, .cheeseHidden, .vegHidden{
+  display: none;
+  top: 30%;
+  margin-left: 20%;
+  padding: 5% 5%;
+  background:rgba(0,0,0,0.5);
+  color: white;
+  font-weight: bold;
+  border: 3px solid white;
+}
+
+#meatPizza:hover, #cheesePizza:hover, #vegPizza:hover{ 
+  cursor:pointer;
+}
