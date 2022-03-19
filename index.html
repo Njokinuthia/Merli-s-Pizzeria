@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <!-- Header section -->
   <section class="header border">
     <nav
       class="w-100  d-flex justify-content-around align-items-center shadow-xl fixed-top fw-bold bg-dark text-white ">
@@ -39,9 +40,10 @@
     </div>
   </section>
 
+  <!-- Menu section -->
   <section class=" border menu">
     <h2 class="text-center">OUR MENU</h2>
-    <div class="container ">  
+    <div class="container ">
       <div class="container-fluid text-center border row py-4 my-1">
         <div class="col">
           <h3>MEATY</h3>
@@ -59,74 +61,68 @@
           <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, minus</P>
         </div>
       </div>
-  
-      <div class="container-fluid border d-flex justify-content-around  ">
-        <div class="border toppings w-50">
-          <h3 class="text-center">Toppings</h3>
-          <ul>
-            <li>Meaty.</li>
-            <li>Extra Cheese.</li>
-            <li>Vegeterian</li>
-          </ul>
-        </div>
-        <div class="border toppings w-50">
-          <h3 class="text-center">Crusts</h3>
-          <ul>
-            <li>Crispy</li>
-            <li>Stuffed</li>
-            <li>Glutten free</li>
-          </ul>
-        </div>
-      </div>
-
 
     </div>
-    
-
-
-
   </section>
 
-  <section class="order container">
-    <h3>ORDER NOW</h3>
-    <div>
-
+  <!-- ordering section -->
+  <!-- TODO:Style Section - choices divs -->
+  <section class="order">
+    <h3 class="text-center">ORDER NOW</h3>
+    <div class="container">
 
       <form action="">
+        <div class="border row ">
 
-        <label for="topping">Topping</label><br>
-        <input type="text"><br>
+          <div class="radio col-md-4 border ">
+            <h3 class="text-center">Sizes</h3>
+            <div class="card-body">
+              <label for=""><input type="radio" name="sizes" value="large">Large</label><br>
+              <label for=""><input type="radio" name="sizes" value="medium">Medium</label><br>
+              <label for=""><input type="radio" name="sizes" value="small">Small</label><br>
+            </div>
+          </div>
 
-        <label for="crust">Crust</label><br>
-        <input type="text"><br>
+          <div class="radio col-md-4 border">
+            <h3 class="text-center">Crusts</h3>
+            <label for=""><input type="radio" name="crusts" value="crispy">Crispy</label><br>
+            <label for=""><input type="radio" name="crusts" value="stuffed">Stuffed</label><br>
+            <label for=""><input type="radio" name="crusts" value="glutenFree">Gluten Free</label><br>
+          </div>
 
-        <label for="topping">Size</label><br>
-        <input type="text"><br>
+          <div class="radio col-md-4">
+            <h3 class="text-center">Toppings</h3>
+            <label for=""><input type="radio" name="toppings" value="meaty">Meaty</label><br>
+            <label for=""><input type="radio" name="toppings" value="cheesy">Extra cheesy</label><br>
+            <label for=""><input type="radio" name="toppings" value="vegeterian">Vegeterian</label><br>
+          </div>
+        </div>
 
-        <label for="topping">Quantity(pcs)</label><br>
-        <input type="text"><br>
+        <div>
+          <h3 >Quantity(pcs)</h3>
+          <label for="quantity"><input type="number"></label><br>
 
-        <label for="delivery">Mode of delivery</label><br>
-        <input type="text"><br>
+          <h3>Mode of delivery</h3>
+          <input type="radio" name="delivery" value="pickUp">Pick from shop</label><br>
+          <input type="radio" name="delivery" value="deliver">Door step delivery</label><br>
+
+          </label><br>
 
 
-        <button type="submit">Order</button>
+          <button type="submit">Order</button>
+        </div>
       </form>
     </div>
+  </section>
 
+  <!-- ouput customer's choices -->
+  <section class="feedback">
     <div class="output">
       <p>Total: </p>
     </div>
-
-
-
-
-
-
   </section>
 
-
-
+  <h2 class="text-center">WELCOME BACK!!!</h2>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
