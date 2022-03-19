@@ -9,7 +9,7 @@
   <title>Merli's Pizzeria</title>
 </head>
 
-<body>
+<body id="body">
   <!-- Header section -->
   <section class="header border">
     <nav
@@ -71,36 +71,36 @@
     <h3 class="text-center">ORDER NOW</h3>
     <div class="container">
 
-      <form action="">
-        <div class="border row ">
+      <form class="submit">
+        <div class="border row " >
 
           <div class="radio col-md-4 border ">
             <h3 class="text-center">Sizes</h3>
             <div class="card-body">
-              <label for=""><input type="radio" name="sizes" value="large">Large</label><br>
-              <label for=""><input type="radio" name="sizes" value="medium">Medium</label><br>
-              <label for=""><input type="radio" name="sizes" value="small">Small</label><br>
+              <label for=""><input type="radio" name="size" value="large">Large</label><br>
+              <label for=""><input type="radio" name="size" value="medium">Medium</label><br>
+              <label for=""><input type="radio" name="size" value="small">Small</label><br>
             </div>
           </div>
 
           <div class="radio col-md-4 border">
             <h3 class="text-center">Crusts</h3>
-            <label for=""><input type="radio" name="crusts" value="crispy">Crispy</label><br>
-            <label for=""><input type="radio" name="crusts" value="stuffed">Stuffed</label><br>
-            <label for=""><input type="radio" name="crusts" value="glutenFree">Gluten Free</label><br>
+            <label for=""><input type="radio" name="crust" value="crispy">Crispy</label><br>
+            <label for=""><input type="radio" name="crust" value="stuffed">Stuffed</label><br>
+            <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free</label><br>
           </div>
 
           <div class="radio col-md-4">
             <h3 class="text-center">Toppings</h3>
-            <label for=""><input type="radio" name="toppings" value="meaty">Meaty</label><br>
-            <label for=""><input type="radio" name="toppings" value="cheesy">Extra cheesy</label><br>
-            <label for=""><input type="radio" name="toppings" value="vegeterian">Vegeterian</label><br>
+            <label for=""><input type="radio" name="topping" value="meaty">Meaty</label><br>
+            <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy</label><br>
+            <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian</label><br>
           </div>
         </div>
 
         <div>
           <h3 >Quantity(pcs)</h3>
-          <label for="quantity"><input type="number"></label><br>
+          <label for="quantity"><input type="number" id="quantity"></label><br>
 
           <h3>Mode of delivery</h3>
           <input type="radio" name="delivery" value="pickUp">Pick from shop</label><br>
@@ -109,7 +109,7 @@
           </label><br>
 
 
-          <button type="submit">Order</button>
+          <button type="submit" id="submit">Order</button>
         </div>
       </form>
     </div>
