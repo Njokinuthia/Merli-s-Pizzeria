@@ -26,14 +26,19 @@ $(document).ready(function() {
 
     // validate form
     if(validate(size,crust,topping,quantity,delivery)){
-      alert("Order received")
+      alert("Order received.Will be ready in 30 minutes")
+
+      // delivery options
       if(delivery==="deliver"){
         prompt("Please insert drop off location")
       }
       else{
-        alert("okay")
+        alert("Please pick your order from the shop")
       }
     }
+
+
+
     else{
       alert("Please fill out out all the choices")     
     }     
