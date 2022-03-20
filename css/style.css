@@ -60,8 +60,18 @@ nav {
   background-position: center;
   opacity: rgba (0, 0, 0, 0 0.5);
 }
-#quantity{
+#quantity {
   background: transparent;
   border: 1px solid white;
   color: white;
+}
+
+.contactUs{
+  color: red;
+  height: 60%;  
+  background-image: url(../assets/map.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: rgba (0, 0, 0, 0 0.5); */
 }
