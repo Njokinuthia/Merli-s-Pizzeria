@@ -25,41 +25,49 @@ function Pizza(size, crust, topping) {
 }
 
 //Topping Price
-let toppingPrice = function(topping){	
-	if (topping === "meaty" || topping === "cheesy"){
-  	return 5;}
-  else{
- 		 return 4;}
+let toppingPrice = function (topping) {
+  if (topping === "meaty" || topping === "cheesy") {
+    return 5;
+  }
+  else {
+    return 4;
+  }
 }
 
 //Crust Price
-let crustPrice = function(crust){	
-	if (crust === "crispy"){
-  	return 1;}
-  else if(crust === "stuffed" ){
- 		 return 2;}
-  else{
-  return 3; } 
+let crustPrice = function (crust) {
+  if (crust === "crispy") {
+    return 1;
+  }
+  else if (crust === "stuffed") {
+    return 2;
+  }
+  else {
+    return 3;
+  }
 }
 
 //Size Price
-let sizePrice = function(size){	
-	if (size === "small"){
-  	return 1;}
-  else if(size === "medium" ){
- 		 return 2;}
-  else{
-  return 3;} 
+let sizePrice = function (size) {
+  if (size === "small") {
+    return 1;
+  }
+  else if (size === "medium") {
+    return 2;
+  }
+  else {
+    return 3;
+  }
 }
 
+// prices calculation function
 
-// prices callculation function
-let prices = function (toppingPrice, crustPrice, sizePrice) {
-  return toppingPrice + crustPrice + sizePrice;
+let price = function(single,quantity){
+  return single * quantity;
 }
 
-let totalPrice = function (prices, quantity, delivery) {
-  return (prices * quantity) + delivery
+let finalPrice = function (pizzaPrices,deliveryCharge) {
+  return pizzaPrices + deliveryCharge
 }
 
 
@@ -73,6 +81,10 @@ let validate = function (size, crust, topping, quantity, delivery) {
 
 // clear form code function
 
+
+
+
+
 // USER INTERFACE CODE
 $(document).ready(function () {
   $(".submit").submit(function (event) {
@@ -83,6 +95,7 @@ $(document).ready(function () {
     let topping = $("input:radio[name=topping]:checked").val()
     let quantity = $("input#quantity").val();
     let delivery = $("input:radio[name=delivery]:checked").val();
+    let deliveryCharge = 0;
 
     // validate form
     if (validate(size, crust, topping, quantity, delivery)) {
@@ -91,21 +104,32 @@ $(document).ready(function () {
       // delivery options
       if (delivery === "deliver") {
         prompt("Please insert drop off location")
+        deliveryCharge = 5;
       }
       else {
         alert("Please pick your order from the shop")
+        deliveryCharge = 0;
       }
     }
     else {
       alert("Please fill out out all the choices")
     }
-    
+
+    // pricing single pizza
     let choice = new Pizza(size, crust, topping);
-    alert(toppingPrice(choice.topping) + crustPrice(choice.crust) + sizePrice(choice.size))
- 
+    let singlePizzaPrice = toppingPrice(choice.topping) + crustPrice(choice.crust) + sizePrice(choice.size);
+    alert(singlePizzaPrice);
+
+    // pricing with quantity
+    let checkout = price(singlePizzaPrice, quantity);
+    alert(checkout)
+
+    // pricing with delivery 
+    let total = finalPrice(checkout, deliveryCharge);
+    alert(total)
 
 
-    $("ul#orders").append("<li><span class='order'><p>Order One: " + custOrder.topping + "</p></span></li>");
+    // $("ul#orders").append("<li><span class='order'><p>Order One: " + custOrder.topping + "</p></span></li>");
   })
 })
 
