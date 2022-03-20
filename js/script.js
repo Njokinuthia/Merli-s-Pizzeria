@@ -73,6 +73,7 @@ let finalPrice = function (pizzaPrices,deliveryCharge) {
 
 
 
+
 // Validation of form function
 let validate = function (size, crust, topping, quantity, delivery) {
   if (!size || !crust || !topping || !quantity || !delivery) return false;
@@ -129,7 +130,11 @@ $(document).ready(function () {
     alert(total)
 
 
-    // $("ul#orders").append("<li><span class='order'><p>Order One: " + custOrder.topping + "</p></span></li>");
+    $("ul#orders").append("<li><span class='order'><p>ORDER: " + quantity +" " +choice.size +" " + choice.topping  + " " + "pizza with" + " " + choice.crust + " " + "crust @ $" + singlePizzaPrice + " each = $" + checkout +" "+ "</p></span></li>");
+
+
+
+
   })
 })
 
