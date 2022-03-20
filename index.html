@@ -45,19 +45,19 @@
     <h2 class="text-center display-2">OUR MENU</h2>
 
     <div class="text-center row w-100 mx-auto py-4">
-      <div id="meatPizza" class="col position-relative">
+      <div id="meatPizza" class="col-md-4 position-relative">
         <h3 class="card-title">MEATY</h3>
         <img class="w-100" src="assets/meaty.jpeg" alt="meaty" height="250">
         <div class="meatHidden position-absolute w-50">Meaty - Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Labore, minus</div>
       </div>
-      <div id="cheesePizza" class="col position-relative">
+      <div id="cheesePizza" class="col-md-4 position-relative">
         <h3>EXTRA CHEESE</h3>
         <img class="w-100" src="assets/cheese2.jpeg" alt="cheesey" height="250">
         <div class="cheeseHidden position-absolute w-50">Cheesey - Lorem ipsum dolor sit amet consectetur adipisicing
           elit. Labore, minus</div>
       </div>
-      <div id="vegPizza" class="col position-relative">
+      <div id="vegPizza" class="col-md-4 position-relative">
         <h3>VEGETERIAN</h3>
         <img class="w-100" src="assets/veg2.jpg" alt="vegeterian" height="250">
         <div class="vegHidden position-absolute w-50">Veggy - Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -69,38 +69,37 @@
   </section>
 
   <!-- ordering section -->
-  <!-- TODO:Style Section - choices divs -->
   <section id="order" class="order text-white">
     <div class="container">
       <h3 class="text-center display-3">ORDER NOW</h3>
 
       <form class="submit">
         <div class="row w-50 ml-0">
-
-          <div class="col-md-4">
-            <h3>Sizes</h3>
+          <div class="radio col-md-4">
+            <h3>Toppings</h3>
             <div class="card-body">
-              <label for=""><input type="radio" name="size" value="large">Large</label><br>
-              <label for=""><input type="radio" name="size" value="medium">Medium</label><br>
-              <label for=""><input type="radio" name="size" value="small">Small</label><br>
+              <label for=""><input type="radio" name="topping" value="meaty">Meaty.....$5</label><br>
+              <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy.....$5</label><br>
+              <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian.....$4</label><br>
             </div>
           </div>
 
           <div class="col-md-4">
             <h3>Crusts</h3>
             <div class="card-body">
-              <label for=""><input type="radio" name="crust" value="crispy">Crispy</label><br>
-              <label for=""><input type="radio" name="crust" value="stuffed">Stuffed</label><br>
-              <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free</label><br>
+              <label for=""><input type="radio" name="crust" value="crispy">Crispy.....$1</label><br>
+              <label for=""><input type="radio" name="crust" value="stuffed">Stuffed.....$2</label><br>
+              <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free----$3</label><br>
             </div>
           </div>
 
-          <div class="radio col-md-4">
-            <h3>Toppings</h3>
+
+          <div class="col-md-4">
+            <h3>Sizes</h3>
             <div class="card-body">
-              <label for=""><input type="radio" name="topping" value="meaty">Meaty</label><br>
-              <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy</label><br>
-              <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian</label><br>
+              <label for=""><input type="radio" name="size" value="large">Large.....$3</label><br>
+              <label for=""><input type="radio" name="size" value="medium">Medium.....$2</label><br>
+              <label for=""><input type="radio" name="size" value="small">Small.....$1</label><br>
             </div>
           </div>
         </div>
@@ -129,7 +128,50 @@
     </div>
   </section>
 
+  <!-- about us section -->
+  <section id="about" class="aboutUs container-fluid w-50 mx-auto">
+    <h2 class="text-center display-2">ABOUT US</h2>
+    <div class="row">
+      <div class=" border">
+        <img src="assets/about.jpg" alt="working">
+      </div>
+      <div class="col-md-12">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita ipsa quod repudiandae necessitatibus
+          labore sed, minus veniam quis inventore, reiciendis eos enim voluptate, illum provident! Pariatur, ipsum
+          officia assumenda tempore nostrum sint culpa at laborum, ipsa quod, sed non aut voluptas. Tempora laborum
+          deserunt sequi doloribus dolore, voluptates nulla?</p>
+
+      </div>
+      <div>
+        <h3>OPENING HOURS</h3>
+        <div>
+          <p>MON & TUE CLOSED</p>
+          <P>WED 1000Hrs-2400Hrs</P>
+          <P>THUR 1000Hrs-2400Hrs</P>
+        </div>
+
+        <div>
+          <P>FRI 1000Hrs-2400Hrs</P>
+          <P>SAT 1000Hrs-1200Hrs</P>
+          <p>SUN CLOSED</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts">
+    <img src="assets/map.jpeg" alt="map">
+    <h3>CONTACT</h3>
+    <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa esse quis. Tempore expedita praesentium quae,
+      repudiandae est veritatis qui!</P>
+
+  </section>
+
   <h2 class="text-center">WELCOME BACK!!!</h2>
+
+  <footer>
+    <p>font awesome icons</p>
+  </footer>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
