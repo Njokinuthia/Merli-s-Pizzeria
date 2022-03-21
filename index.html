@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Merli's Pizzeria</title>
@@ -13,7 +14,7 @@
   <!-- Header section -->
   <section id="home" class="header border">
     <nav
-      class="w-100  d-flex justify-content-around align-items-center shadow-xl fixed-top fw-bold bg-dark text-white ">
+      class="w-100  d-flex justify-content-around align-items-center shadow-xl fixed-top bg-dark fw-bold text-white ">
       <div class="d-flex align-items-end">
         <!-- <img src="assets/chef.jpeg" alt="chef" width="80" height="80"> -->
         <h5 class="fw-bold">Merli's <br>Pizzeria</h5>
@@ -23,11 +24,11 @@
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#menu">Menu</a>
-        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div class="fw-bold">
-        <button class="btn">Menu</button>
+        <a href="#order"><button class="btn">ORDER</button></a>
       </div>
     </nav>
 
@@ -73,61 +74,78 @@
     <div class="container">
       <h3 class="text-center display-3">ORDER NOW</h3>
 
-      <form class="submit">
-        <div class="row w-50 ml-0">
-          <div class="radio col-md-4">
-            <h3>Toppings</h3>
-            <div class="card-body">
-              <label for=""><input type="radio" name="topping" value="meaty">Meaty.....$5</label><br>
-              <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy.....$5</label><br>
-              <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian.....$4</label><br>
+      <div class="row">
+
+        <form class="submit col-md-8">
+          <div class="row w-50 ml-0">
+            <div class="radio col-md-4">
+              <h3>Toppings</h3>
+              <div class="card-body">
+                <label for=""><input type="radio" name="topping" value="meaty">Meaty.....$5</label><br>
+                <label for=""><input type="radio" name="topping" value="cheesy">Extra cheesy.....$5</label><br>
+                <label for=""><input type="radio" name="topping" value="vegeterian">Vegeterian.....$4</label><br>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <h3>Crusts</h3>
+              <div class="card-body">
+                <label for=""><input type="radio" name="crust" value="crispy">Crispy.....$1</label><br>
+                <label for=""><input type="radio" name="crust" value="stuffed">Stuffed.....$2</label><br>
+                <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free----$3</label><br>
+              </div>
+            </div>
+
+
+            <div class="col-md-4">
+              <h3>Sizes</h3>
+              <div class="card-body">
+                <label for=""><input type="radio" name="size" value="large">Large.....$3</label><br>
+                <label for=""><input type="radio" name="size" value="medium">Medium.....$2</label><br>
+                <label for=""><input type="radio" name="size" value="small">Small.....$1</label><br>
+              </div>
             </div>
           </div>
 
-          <div class="col-md-4">
-            <h3>Crusts</h3>
-            <div class="card-body">
-              <label for=""><input type="radio" name="crust" value="crispy">Crispy.....$1</label><br>
-              <label for=""><input type="radio" name="crust" value="stuffed">Stuffed.....$2</label><br>
-              <label for=""><input type="radio" name="crust" value="glutenFree">Gluten Free----$3</label><br>
-            </div>
-          </div>
+          <div class="col-md-6 w-50 ml-0">
+
+            <h3 class="d-inline"> Quantity(pcs)</h3>
+            <label class="d-inline" for="quantity"><input type="number" min="1" max="5" id="quantity"></label><br>
+
+            <h3>Mode of delivery</h3>
+            <input type="radio" name="delivery" value="pickUp">Pick from shop</label><br>
+            <input type="radio" name="delivery" value="deliver">Door step delivery</label><br>
+
+            </label><br>
 
 
-          <div class="col-md-4">
-            <h3>Sizes</h3>
-            <div class="card-body">
-              <label for=""><input type="radio" name="size" value="large">Large.....$3</label><br>
-              <label for=""><input type="radio" name="size" value="medium">Medium.....$2</label><br>
-              <label for=""><input type="radio" name="size" value="small">Small.....$1</label><br>
-            </div>
+            <button type="submit" id="submit">Add To Cart</button>
           </div>
+        </form>
+
+        <div class="output col-md-4 bg-white text-dark">
+          <div class="d-flex justify-content-between">
+            <h4>Your Cart:</h4>
+            <button class="py-2 px-2 rounded btn-secondary checkout ">CHECK OUT</button>
+          </div>
+          <ul id="orders"></ul>
+          <h4 class="total"></h4>
+          <!-- <button onClick = printTotalPrice() class="py-2 px-2 rounded btn-secondary checkout ">CHECK OUT</button> -->
         </div>
 
-        <div class="col-md-6 w-50 ml-0">
-          <h3>Quantity(pcs)</h3>
-          <label for="quantity"><input type="number" id="quantity"></label><br>
+      </div>
 
-          <h3>Mode of delivery</h3>
-          <input type="radio" name="delivery" value="pickUp">Pick from shop</label><br>
-          <input type="radio" name="delivery" value="deliver">Door step delivery</label><br>
-
-          </label><br>
-
-
-          <button type="submit" id="submit">Order</button>
-        </div>
-      </form>
     </div>
   </section>
 
   <!-- ouput customer's choices -->
-  <section class="feedback">
+  <!-- <section class="feedback">
+
     <div class="output">
       <ul id="orders"></ul>
-      <button class="py-2 px-2 rounded btn-secondary ">CHECK OUT</button>
+      <button class="py-2 px-2 rounded btn-secondary ">CHE</button>
     </div>
-  </section>
+  </section> -->
 
   <!-- about us section -->
   <section id="about" class="aboutUs container  ">
@@ -160,9 +178,9 @@
     </div>
   </section>
 
-  <section class="contacts ">
+  <section id="contact" class="contacts ">
     <h2 class="text-center display-2">CONTACT US</h2>
-    <div class="contactUs"></div>
+    <div class="contactUs container"></div>
     <div class="w-75 mx-auto mt-4">
       <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus inventore eaque consectetur! Modi ea
         suscipit aperiam sint dicta recusandae necessitatibus blanditiis, corporis dolores perferendis quas impedit
@@ -172,11 +190,25 @@
     </div>
   </section>
 
-  <h2 class="text-center">WELCOME BACK!!!</h2>
+  <section class="footer shadow-xl bg-dark">
 
-  <footer>
-    <p>font awesome icons</p>
-  </footer>
+
+    <div class="w-80 d-flex justify-content-between align-items-center  fw-bold text-white">
+      <div>
+        <h5 class="fw-bold">Merli's <br>Pizzeria</h5>
+      </div>
+      <div>
+        <h2 class="text-center">WELCOME BACK!!!</h2>
+      </div>
+      <div>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+      </div>
+    </div>
+  </section>
+
+
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="

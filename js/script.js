@@ -3,7 +3,7 @@
 //  body.style.backgroundColor ="red";
 
 
-// BUSINESS LOGIC CODE
+// FUNCTIONAL STYLING
 // menu hover
 $(document).ready(function () {
   $("#meatPizza").hover(function () {
@@ -17,13 +17,17 @@ $(document).ready(function () {
   })
 })
 
+// BUSINESS LOGIC CODE
 // all choices from user
 function Pizza(size, crust, topping) {
   this.size = size;
   this.crust = crust;
   this.topping = topping;
 }
+let custOrder = [];
+let individualOrderCosts = [];
 
+// TODO:ternary - ??return
 //Topping Price
 let toppingPrice = function (topping) {
   if (topping === "meaty" || topping === "cheesy") {
@@ -45,6 +49,7 @@ let crustPrice = function (crust) {
   else {
     return 3;
   }
+  
 }
 
 //Size Price
@@ -62,16 +67,13 @@ let sizePrice = function (size) {
 
 // prices calculation function
 
-let price = function(single,quantity){
+let price = function (single, quantity) {
   return single * quantity;
 }
 
-let finalPrice = function (pizzaPrices,deliveryCharge) {
+let finalPrice = function (pizzaPrices, deliveryCharge) {
   return pizzaPrices + deliveryCharge
 }
-
-
-
 
 
 // Validation of form function
@@ -81,9 +83,6 @@ let validate = function (size, crust, topping, quantity, delivery) {
 }
 
 // clear form code function
-
-
-
 
 
 // USER INTERFACE CODE
@@ -97,44 +96,62 @@ $(document).ready(function () {
     let quantity = $("input#quantity").val();
     let delivery = $("input:radio[name=delivery]:checked").val();
     let deliveryCharge = 0;
+    let location = 0;
 
     // validate form
     if (validate(size, crust, topping, quantity, delivery)) {
-      alert("Order received.Will be ready in 30 minutes")
 
       // delivery options
       if (delivery === "deliver") {
-        prompt("Please insert drop off location")
+        location = prompt("Please insert drop off location")
         deliveryCharge = 5;
       }
       else {
-        alert("Please pick your order from the shop")
         deliveryCharge = 0;
       }
+      
+      let choice = new Pizza(size, crust, topping);
+      custOrder.push(choice);
+     
+      // pricing   
+      let singlePizzaPrice = toppingPrice(choice.topping) + crustPrice(choice.crust) + sizePrice(choice.size);
+
+      // pricing with quantity
+      let quantityPrice = price(singlePizzaPrice, quantity);
+      individualOrderCosts.push(quantityPrice)
+
+      // pricing with delivery  - wrong
+      let total = finalPrice(quantityPrice, deliveryCharge);
+     
+      $("ul#orders").append("<li><span class='order'><p>" + quantity + " " + choice.size + " " + choice.topping + " " + "pizza with" + " " + choice.crust + " " + "crust @ $" + singlePizzaPrice + " each = $" + quantityPrice + " " + "</p></span></li>");
+
+
+      // TODO:Length of array????????
+      let cost = 0;     
+      individualOrderCosts.forEach(function(individualOrderCost){
+        cost += individualOrderCost;
+
+      })
+
+
+
+     
+
+      $(".checkout").click(function () {
+        
+        
+        if (delivery === "deliver") {
+          $(".total").text("Order to be delivered to ' " + location + " ' TOTAL PRICE: $" + cost);
+        }
+        else {
+          $(".total").text("Order to be picked from shop. TOTAL PRICE: $ " + cost);
+        }
+      })
+
     }
     else {
       alert("Please fill out out all the choices")
     }
-
-    // pricing single pizza
-    let choice = new Pizza(size, crust, topping);
-    let singlePizzaPrice = toppingPrice(choice.topping) + crustPrice(choice.crust) + sizePrice(choice.size);
-    alert(singlePizzaPrice);
-
-    // pricing with quantity
-    let checkout = price(singlePizzaPrice, quantity);
-    alert(checkout)
-
-    // pricing with delivery 
-    let total = finalPrice(checkout, deliveryCharge);
-    alert(total)
-
-
-    $("ul#orders").append("<li><span class='order'><p>ORDER: " + quantity +" " +choice.size +" " + choice.topping  + " " + "pizza with" + " " + choice.crust + " " + "crust @ $" + singlePizzaPrice + " each = $" + checkout +" "+ "</p></span></li>");
-
-
-
-
   })
 })
 

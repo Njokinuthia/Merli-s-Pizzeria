@@ -24,7 +24,7 @@ a {
   background-size: cover;
   background-position: center;
 }
-nav {
+nav{
   opacity: 0.7;
   height: 10%;
 }
@@ -75,3 +75,11 @@ nav {
   background-position: center;
   opacity: rgba (0, 0, 0, 0 0.5); */
 }
+.w-80{
+  width:80%;
+  margin:auto;
+}
+/* .footer{
+  opacity: 0.7;
+  
+} */
