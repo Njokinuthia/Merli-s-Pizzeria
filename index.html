@@ -112,16 +112,21 @@
             <h3 class="d-inline"> Quantity(pcs)</h3>
             <label class="d-inline" for="quantity"><input type="number" min="1" max="5" id="quantity"></label><br>
 
-            <h3>Mode of delivery</h3>
-            <input type="radio" name="delivery" value="pickUp">Pick from shop</label><br>
-            <input type="radio" name="delivery" value="deliver">Door step delivery</label><br>
 
-            </label><br>
+            <div class="modeOfDelivery  displayNow">
+              <h3>Mode of delivery (standard charge of $5</h3>
+
+              <input class="deliver" type="radio" name="delivery" value="pickUp">Pick from shop</label><br>
+              <input class="deliver" type="radio" name="delivery" value="deliver">Door step delivery</label><br>
 
 
-            <button type="submit" id="submit">Add To Cart</button>
+            </div>
           </div>
+          <button type="submit" id="submit">Add To Cart</button>
+
+
         </form>
+
 
         <div class="output col-md-4 bg-white text-dark">
           <div class="d-flex justify-content-between">
@@ -137,16 +142,7 @@
 
     </div>
   </section>
-
-  <!-- ouput customer's choices -->
-  <!-- <section class="feedback">
-
-    <div class="output">
-      <ul id="orders"></ul>
-      <button class="py-2 px-2 rounded btn-secondary ">CHE</button>
-    </div>
-  </section> -->
-
+  
   <!-- about us section -->
   <section id="about" class="aboutUs container  ">
     <h2 class="text-center display-2">ABOUT US</h2>

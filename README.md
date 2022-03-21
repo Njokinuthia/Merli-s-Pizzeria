@@ -25,23 +25,25 @@
 * An access to the Internet
 
 ## Technology Used
-* HTML -  used to build the structure of the pages.
-
-* CSS -  used to style the pages. 
-
-* Javascript -  used to make the website interactive.
-
-* JQuery -  used to make website functional
-
+* HTML5
+* CSS 
+* Bootstrap
+* Javascript 
+* JQuery 
 
 ## Behaviour Driven Development
 
-1. Gives more information on pizza ingredients by displaying ingredientd on hover.
-2. Allows user to input their order through a form.
-3. Alerts user if form not correctly / fully filled.  
-4. Displays alert message when form is submitted.
+1. User input their order and delivery preference through a form.
+2. Alerts user if form not fully filled. 
+3. User clicks checkout
+4. If to be delivered user prompted to input location
 5. Gives back user prices to pay for order. 
 
+## Known Bugs
+* Gives delivery option for individual order.
+
+## Contributing
+* Cotributions to the project are welcome. Fork repo to contribute.
 
 ## Licence
 
@@ -69,7 +71,7 @@ SOFTWARE.
 
 
 ## Author Contact
-
+Njoki Kinuthia
 Email - kinuthiash@gmail.com
 
 

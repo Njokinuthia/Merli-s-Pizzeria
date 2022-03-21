@@ -49,7 +49,7 @@ let crustPrice = function (crust) {
   else {
     return 3;
   }
-  
+
 }
 
 //Size Price
@@ -101,18 +101,11 @@ $(document).ready(function () {
     // validate form
     if (validate(size, crust, topping, quantity, delivery)) {
 
-      // delivery options
-      if (delivery === "deliver") {
-        location = prompt("Please insert drop off location")
-        deliveryCharge = 5;
-      }
-      else {
-        deliveryCharge = 0;
-      }
-      
+
       let choice = new Pizza(size, crust, topping);
       custOrder.push(choice);
-     
+
+
       // pricing   
       let singlePizzaPrice = toppingPrice(choice.topping) + crustPrice(choice.crust) + sizePrice(choice.size);
 
@@ -120,31 +113,36 @@ $(document).ready(function () {
       let quantityPrice = price(singlePizzaPrice, quantity);
       individualOrderCosts.push(quantityPrice)
 
-      // pricing with delivery  - wrong
-      let total = finalPrice(quantityPrice, deliveryCharge);
-     
+
       $("ul#orders").append("<li><span class='order'><p>" + quantity + " " + choice.size + " " + choice.topping + " " + "pizza with" + " " + choice.crust + " " + "crust @ $" + singlePizzaPrice + " each = $" + quantityPrice + " " + "</p></span></li>");
 
-
       // TODO:Length of array????????
-      let cost = 0;     
-      individualOrderCosts.forEach(function(individualOrderCost){
+      let cost = 0;
+      individualOrderCosts.forEach(function (individualOrderCost) {
         cost += individualOrderCost;
-
       })
 
-
-
-     
-
       $(".checkout").click(function () {
-        
-        
+        // delivery options
+
+        // if (delivery === "deliver") {
+        //   location = prompt("Please insert drop off location")
+        //   deliveryCharge = 5;
+        // }
+        // else {
+        //   deliveryCharge = 0;
+        // }
+
+
         if (delivery === "deliver") {
-          $(".total").text("Order to be delivered to ' " + location + " ' TOTAL PRICE: $" + cost);
+          let withDeliveryCost = cost + 5;
+          location = prompt("Please insert drop off location")
+
+
+          $(".total").text("Delivery to ' " + location + " ' TOTAL PRICE: $ " + withDeliveryCost);
         }
         else {
-          $(".total").text("Order to be picked from shop. TOTAL PRICE: $ " + cost);
+          $(".total").text("Pick order from shop. TOTAL PRICE: $ " + cost);
         }
       })
 
